@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import css from './movies.module.css';
 const API_KEY = 'ec14b12534cfa5aa544b4a61898160f3';
 
 const Movies = () => {
@@ -30,19 +31,24 @@ const Movies = () => {
   return (
     <div>
       <div>
-        <form onSubmit={handleSubmit}>
-          <input type="text" value={searchQuery} onChange={handleInputChange} />
+        <form onSubmit={handleSubmit} className={css.form}>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={handleInputChange}
+            className={css.input}
+          />
           <button type="submit">Search</button>
         </form>
       </div>
       <div>
+        <h2 className={css.searchHeader}>Search Results:</h2>
         <ul>
           {movies.map(movie => (
             <li key={movie.id}>
               <Link
                 to={{
                   pathname: `/movies/${movie.id}`,
-                  state: { movies },
                 }}
               >
                 {movie.title}

@@ -1,0 +1,10 @@
+.movieImg {
+  width: 150px;
+  height: auto;
+}
+.goBackBtn {
+  margin: 15px 0px;
+}
+.movieDetails {
+  margin-left: 20px;
+}

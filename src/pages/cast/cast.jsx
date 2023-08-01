@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import css from './cast.module.css';
 const API_KEY = 'ec14b12534cfa5aa544b4a61898160f3';
 
 const Cast = () => {
@@ -21,9 +22,8 @@ const Cast = () => {
       console.error('Error:', error);
     }
   };
-  console.log(cast);
   return (
-    <div>
+    <div className={css.castContainer}>
       <ul>
         {cast.map(actor => (
           <li key={actor.id}>

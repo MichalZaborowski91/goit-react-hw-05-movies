@@ -1,0 +1,9 @@
+.header {
+  width: 100wv;
+  height: 50px;
+  background-color: rgb(197, 194, 194);
+}
+.navLink {
+  font-size: 20px;
+  padding-left: 25px;
+}

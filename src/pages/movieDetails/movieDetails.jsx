@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import css from './movieDetails.module.css';
 const API_KEY = 'ec14b12534cfa5aa544b4a61898160f3';
 
 const MovieDetails = () => {
@@ -29,13 +30,16 @@ const MovieDetails = () => {
   };
 
   return (
-    <div>
+    <div className={css.movieDetails}>
       <div>
-        <button onClick={goBack}>Go Back</button>
+        <button className={css.goBackBtn} onClick={goBack}>
+          Go Back
+        </button>
       </div>
       <div>
         {movieDetails && (
           <img
+            className={css.movieImg}
             src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`}
             alt={movieDetails.title}
           />
@@ -53,6 +57,7 @@ const MovieDetails = () => {
           <p>Loading...</p>
         )}
       </div>
+
       <nav>
         <ul>
           <li>
