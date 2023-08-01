@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 const API_KEY = 'ec14b12534cfa5aa544b4a61898160f3';
@@ -9,7 +10,6 @@ const Reviews = () => {
   useEffect(() => {
     fetchReviews();
     console.log(reviews);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchReviews = async () => {
